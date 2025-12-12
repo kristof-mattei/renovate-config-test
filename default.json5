@@ -14,7 +14,7 @@
     ":prConcurrentLimitNone",
     ":pinDevDependencies",
     ":prHourlyLimitNone",
-    // "helpers:pinGitHubActionDigests",
+    "helpers:pinGitHubActionDigests",
     "helpers:pinGitHubActionDigestsToSemver"
   ],
   "internalChecksFilter": "strict",
@@ -31,13 +31,13 @@
       "description": "v prefix workaround for action updates with 1 component",
       "extractVersion": "^(?<version>v?\\d+)$",
       "matchDepTypes": ["action"],
-      "versioning": "regex:^v?(?<major>\\d+)?$"
+      "versioning": "regex:^v?(?<major>\\d+)(\\.(?<minor>\\d+)\\.(?<patch>\\d+))?$"
     },
     {
       "description": "v prefix workaround for action updates with 2 components",
       "extractVersion": "^(?<version>v?\\d+\\.\\d+)$",
       "matchDepTypes": ["action"],
-      "versioning": "regex:^v?(?<major>\\d+)(\\.(?<minor>\\d+))?$"
+      "versioning": "regex:^v?(?<major>\\d+)(\\.(?<minor>\\d+)\\.(?<patch>\\d+))?$"
     },
     {
       "description": "v prefix workaround for action updates with 3 components",
