@@ -1,0 +1,13 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "Special cases for GitHub Actions not following semver",
+  "packageRules": [
+    {
+      "description": "Handle mold (only v1 & staging)",
+      "extractVersion": "^(?<version>v?\\d+)$",
+      "matchDepNames": ["rui314/setup-mold"],
+      "matchDepTypes": ["action"],
+      "versioning": "regex:^v?(?<major>\\d+)(\\.(?<minor>\\d+)\\.(?<patch>\\d+))?$"
+    }
+  ]
+}
