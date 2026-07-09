@@ -1,13 +1,14 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "description": "Groups the built-in rust-toolchain manager's updates of the `channel` field in the `rust-toolchain.toml` file into the Rust group",
+  "description": "Groups version updates of the `rust` Docker image into the Rust group (digest-only updates stay separate)",
   "packageRules": [
     {
       "commitMessageTopic": "Rust",
       "groupSlug": "rust",
       "groupName": "Rust",
+      "matchDatasources": ["docker"],
       "matchDepNames": ["rust"],
-      "matchManagers": ["rust-toolchain"]
+      "matchUpdateTypes": ["major", "minor", "patch"]
     }
   ]
 }

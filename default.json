@@ -14,7 +14,6 @@
     ":prConcurrentLimitNone",
     ":pinDevDependencies",
     ":prHourlyLimitNone",
-    "helpers:pinGitHubActionDigests",
     "helpers:pinGitHubActionDigestsToSemver"
   ],
   "internalChecksFilter": "strict",
@@ -31,6 +30,21 @@
       "automerge": false,
       "description": "Automatically creates a PR whenever there is a new major Renovate version",
       "matchUpdateTypes": ["major"]
+    },
+    {
+      "description": "Group GitHub Actions from the same org together",
+      "matchManagers": ["github-actions"],
+      "matchPackageNames": ["docker/**"],
+      "groupName": "docker/* actions"
+    },
+    {
+      "description": "Hold off npm package updates for 24 hours after release, matching pnpm's minimumReleaseAge",
+      "matchManagers": ["npm"],
+      "minimumReleaseAge": "24 hours"
+    },
+    {
+      "matchManagers": ["cargo"],
+      "rangeStrategy": "pin"
     }
   ],
   "platformAutomerge": true,
