@@ -15,6 +15,7 @@
       "customType": "regex",
       "datasourceTemplate": "rust-version",
       "depNameTemplate": "rust",
+      "depTypeTemplate": "rust-version",
       "managerFilePatterns": ["/^Cargo\\.toml?$/"],
       "matchStrings": [
         "rust-version\\s*=\\s*\"(?<currentValue>\\d+\\.\\d+(\\.\\d+)?)\""
