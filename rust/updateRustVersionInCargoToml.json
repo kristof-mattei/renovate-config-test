@@ -13,13 +13,12 @@
   "customManagers": [
     {
       "customType": "regex",
-      "datasourceTemplate": "github-tags",
+      "datasourceTemplate": "rust-version",
       "depNameTemplate": "rust",
-      "fileMatch": ["^Cargo\\.toml?$"],
+      "managerFilePatterns": ["/^Cargo\\.toml?$/"],
       "matchStrings": [
         "rust-version\\s*=\\s*\"(?<currentValue>\\d+\\.\\d+(\\.\\d+)?)\""
-      ],
-      "packageNameTemplate": "rust-lang/rust"
+      ]
     }
   ]
 }
